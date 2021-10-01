@@ -1,5 +1,13 @@
-x = "ABCBDAB"
-y = "BDCABA"
+"""
+In biological applications, we often want to compare the DNA of two 
+(or more) different organisms. For example, the DNA of one organism may 
+be S1 = ACCGGTCGAGTG while the DNA of another organism may be 
+S2 = GTCGTTCGGAAT. One goal of comparing two strands of DNA is to 
+determine how “similar” the two strands are, as some measure of how 
+closely related the two organisms are.
+"""
+x = "ACCGGTCGAGTG"
+y = "GTCGTTCGGAAT"
 
 #x = "ABAZDC"
 #y = "BACBAD"
@@ -31,7 +39,6 @@ def lcs_length(x, y):
     ls = []
     for i in range(0, len(mat)):
         ls.append(list(mat[i]))
-    print("ls = ", len(ls))
 
     for i in ls:
         if ls.index(i) == 0:
@@ -48,14 +55,15 @@ lcs_length(x, y)
 
 
 def print_LCS(b, x, i, j):
-	if i == 0 or j == 0:
-		return
-	if b[i][j] == u'\u2196':
-		print_LCS(b, x, i-1, j-1)
-		print(x[i])
-	elif b[i][j] == u'\u2191':
-		print_LCS(b, x, i-1, j)
-	else:
-		print_LCS(b, x, i, j-1)
+    if i == 0 or j == 0:
+        return
+    if b[i][j] == u'\u2196':
+        print_LCS(b, x, i-1, j-1)
+        print(x[i])
+    elif b[i][j] == u'\u2191':
+        print_LCS(b, x, i-1, j)
+    else:
+        print_LCS(b, x, i, j-1)
+
 
 print_LCS(b, "0"+x, len(x)-1, len(y))

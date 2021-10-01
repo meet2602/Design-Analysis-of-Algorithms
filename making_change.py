@@ -1,3 +1,12 @@
+"""
+Suppose customer has purchased some items from Mall. He has the 
+bill of Rs. 732 to be paid at the billing counter. Customer has the options in 
+his wallet of Rs. {500, 100, 50, 20, 10, 1}. Your problem is to devise an 
+algorithm for paying a given amount to billing counter using the smallest 
+possible number of coins. You can use one option more than once.
+"""
+
+
 def Coins(N, d):
     c = [[] for i in range(len(d))]
     for i in range(len(d)):
